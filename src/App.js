@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 const App = () => {
@@ -15,34 +16,66 @@ const App = () => {
 }
 
 const ToDoComponent = () => {
+
+  const [checkboxstate, setCheckboxState] = useState({
+    firstCheckbox: "",
+    secondCheckbox:"",
+    third: "",
+    fourth: ""
+  }
+)
+
+  const handleChange = event => {
+    setCheckboxState({
+      ...checkboxstate,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  console.log(checkboxstate.firstCheckbox);
+
+  
+  function onSubmit(event) {
+    event.preventDefault();
+    let arrCheckboxes = [];
+    arrCheckboxes.push(checkboxstate);
+    console.log("HELLOOO THIS IS MY ARRAY", arrCheckboxes)
+
+    return arrCheckboxes
+  }
+
+
   return (
     <div>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 class="header-color">
-          Things to do in React: 
-        </h1>
+        <form onSubmit = {onSubmit}>
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="header-color">
+              Things to do in React: 
+            </h1>
 
-        <div class="ui checkbox">
-          <input type="checkbox" class="checkbox"  />
-          <label>Learn to use props</label>
-        </div>
-        <div class="ui checkbox">
-          <input type="checkbox" class="checkbox"  />
-          <label>Learn to use State</label>
-        </div>
-        <div class="ui checkbox">
-          <input type="checkbox" class="checkbox"  />
-          <label>Learn to Destructure things</label>
-        </div>
-        <div class="ui checkbox">
-          <input type="checkbox" class="checkbox"  />
-          <label>Make API calls</label>
-        </div>
+            <div className="ui checkbox">
+              <input type="checkbox"  name="firstCheckbox" type="checkbox" value={"Learn to use props "} onChange={handleChange}  />
+              <label>Learn to use props</label>
+            </div>
+            <div className="ui checkbox">
+              <input type="checkbox"    name="secondCheckbox"  type="checkbox" value={"Learn to use state"}  onChange={handleChange} className="checkbox" />
+              <label>Learn to use State</label>
+            </div>
+            <div className="ui checkbox">
+              <input type="checkbox"   name="third" type="checkbox" value={"Learn to use destructure things"} onChange={handleChange} className="checkbox"/>
+              <label>Learn to Destructure things</label>
+            </div>
+            <div className="ui checkbox">
+              <input type="checkbox"  name="fourth" value={"Learn to use make API calls"} onChange={handleChange} className="checkbox"/>
+              <label>Make API calls</label>
+            </div>
 
-      
-      </header>
+            <button>SUBMIT</button>
+          </header>
+        </form>
     </div>
+
   )
 }
 
