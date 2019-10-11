@@ -15,15 +15,19 @@ const App = () => {
   );
 }
 
-const ToDoComponent = () => {
+//not possible to send props to child to sibling!
 
-  const [checkboxstate, setCheckboxState] = useState({
-    firstCheckbox: "",
-    secondCheckbox:"",
-    third: "",
-    fourth: ""
-  }
-)
+//send state to the parent (App) and then send it back to the child (What I learned). Probably need to remove state from ToDoComponent and put it in App
+
+
+const ToDoComponent = () => {
+    const [checkboxstate, setCheckboxState] = useState({
+      firstCheckbox: "",
+      secondCheckbox:"",
+      third: "",
+      fourth: ""
+    }
+  )
 
   const handleChange = event => {
     setCheckboxState({
@@ -32,22 +36,18 @@ const ToDoComponent = () => {
     });
   };
 
-  console.log(checkboxstate.firstCheckbox);
-
+  console.log(checkboxstate);
   
-  function onSubmit(event) {
+ function printArray(event){
     event.preventDefault();
     let arrCheckboxes = [];
     arrCheckboxes.push(checkboxstate);
     console.log("HELLOOO THIS IS MY ARRAY", arrCheckboxes)
-
-    return arrCheckboxes
   }
-
-
+  
   return (
     <div>
-        <form onSubmit = {onSubmit}>
+        <form onSubmit = {printArray}>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="header-color">
