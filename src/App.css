@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Zilla+Slab&display=swap');
+
+
 .App {
   text-align: center;
 }
@@ -6,18 +10,134 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cross {
+  width: 30px;
+  height: 30px;
+}
+
+.parent-wrapper {
+  /* background-color: #282c34; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .header-color{
   /* color: #09d3ac; */
   color: lightblue;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Zilla Slab', serif;
+  font-size: 35px;
+}
+
+.form__img-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+.form__input-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 30px;
+
+}
+.form__checkbox-box {
+  display: flex;
+  flex: 1 1;
+  align-items: center;
+  font-family: 'Zilla Slab', serif;
+  font-size: 22px;
+  justify-content: center;
+}
+
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgb(238, 161, 194)), color-stop(0.15, #f29f), color-stop(0.3, #28f), color-stop(0.45, #28f), color-stop(0.3, #28f),color-stop(0.4, rgb(28, 184, 231)), color-stop(0.5, rgb(16, 159, 241)), color-stop(1, rgb(3, 77, 61)) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f19), color-stop(0.15, #f29f), color-stop(0.3, #28f), color-stop(0.45, #28f), color-stop(0.6, #28f),color-stop(0.45, #28f), color-stop(0.9, rgb(46, 136, 99)), color-stop(1, #f28f) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-left: 30px;
+}
+
+.button {
+  margin-top: 100px;
+  width: 180px;
+  height: 60px;
+  border: 2px solid #00BCD4;
+  background: #00BCD4;
+  color: black;
+  border-radius: 3px;
+  font-size: 18px;
+  outline: none;
+}
+
+input[type=checkbox] {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  visibility: hidden;
+}
+
+input[type=checkbox]:after {
+  content: " ";
+  display: inline-block;
+  margin-left: 5px;
+  padding-bottom: 5px;
+  color:  #00BCD4;
+  width: 18px;
+  height: 18px;
+  visibility: visible;
+  border: 2px solid #00BCD4;
+  padding-left: 3px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+input[type=checkbox]:checked:after {
+  content: "\2714";
+  padding: -5px;
+  font-weight: bold;
+  transform: scale(1.5); 
+  margin-right: 10px;
+}
+
+.parent-title {
+  font-family: 'Zilla Slab', serif;
+  font-size: 42px;
+}
+
+.parent-paragraph {
+  font-family: 'Zilla Slab', serif;
+  font-size: 32px;
+  margin: 0;
+}
+
+.parent__image-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+}
+
+
+
